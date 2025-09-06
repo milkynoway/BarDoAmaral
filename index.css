@@ -1,11 +1,11 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilo geral */
+/* Estilo do body */
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #f8b500, #fceabb);
@@ -15,28 +15,45 @@ body {
   height: 100vh;
 }
 
-/* Container central */
+/* Container */
 .container {
   text-align: center;
   background: #fff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  width: 350px;
 }
 
-/* Título e subtítulo */
-.container h1 {
-  font-size: 2rem;
+/* Banner */
+.banner {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 15px;
+}
+
+/* Logo */
+.logo {
+  font-size: 3rem;
+  color: #f8b500;
+  margin-bottom: 10px;
+}
+
+/* Título e texto */
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
   color: #333;
 }
 
-.container p {
+p {
   margin-bottom: 20px;
   color: #555;
 }
 
-/* Botão de login */
+/* Botão */
 button {
   background: #f8b500;
   border: none;
@@ -51,4 +68,20 @@ button {
 
 button:hover {
   background: #d89c00;
+}
+
+/* Redes sociais */
+.social {
+  margin-top: 20px;
+}
+
+.social a {
+  font-size: 1.8rem;
+  margin: 0 10px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.social a:hover {
+  color: #f8b500;
 }
