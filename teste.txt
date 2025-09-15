@@ -3,3 +3,4 @@ teste alerta Discord
 teste alerta Discord
 Teste alerta Discord
 Teste alerta Discord
+teste CI
