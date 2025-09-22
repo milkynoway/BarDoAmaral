@@ -2,21 +2,21 @@ name: Alerts to Discord
 
 on:
   push:
-    branches: [ main ]         # alerta em push no main
+    branches: [ main ]
   pull_request:
-    types: [ opened, closed, synchronize ]  # alerta em PRs
+    types: [ opened, closed, synchronize ]
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Notify Discord
-        uses: Ilshidur/action-discord@v2
+      - name: Send Discord message
+        uses: Ilshidur/action-discord@master
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           args: |
-            📢 **Evento:** ${{ github.event_name }}
-            **Repo:** ${{ github.repository }}
-            **Actor:** ${{ github.actor }}
-            **Ref:** ${{ github.ref }}
-            **Commit:** ${{ github.sha }}
+            📢 Evento: ${{ github.event_name }}
+            📝 Repo: ${{ github.repository }}
+            👤 Autor: ${{ github.actor }}
+            🌿 Ref: ${{ github.ref }}
+            🔗 Commit: ${{ github.sha }}
