@@ -7,14 +7,18 @@ on:
     branches: [ main ]
 
 jobs:
-  check-files:
+  check-files-and-tests:
     runs-on: ubuntu-latest
+
     steps:
+      # Passo 1: Pega o código do repositório
       - uses: actions/checkout@v3
+
+      # Passo 2: Verifica se os arquivos principais existem
       - name: Verificar arquivos principais
         run: |
-          if [ ! -f index.html ]; then
-            echo "❌ index.html não encontrado!"
+          if [ ! -f tela-principal.html ]; then
+            echo "❌ tela-principal.html não encontrado!"
             exit 1
           fi
           if [ ! -f index.css ]; then
@@ -26,3 +30,17 @@ jobs:
             exit 1
           fi
           echo "✅ Todos os arquivos encontrados!"
+
+      # Passo 3: Configura Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      # Passo 4: Instala dependências
+      - name: Instalar dependências
+        run: npm install
+
+      # Passo 5: Executa os testes com Jest
+      - name: Rodar testes unitários
+        run: npm test
